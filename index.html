@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solução do Módulo 2</title>
+    <h1> Nosso Cardápio</h1>
+    
+</head>
+
+<style>
+    #container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* espaçamento entre as caixas */
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    background-color:rgb(255, 255, 255);
+    width: 60px;
+    border-bottom: black solid 1px;
+    border-left: black solid 1px;
+    float: right;
+    padding: 0;
+}
+
+
+.box {
+  width:47%;
+  background-color: rgb(122, 126, 128);
+  border: black 1px solid;
+  padding-left: 5px;
+}
+
+/* Força a terceira caixa a ocupar toda a linha de baixo */
+.box:nth-child(3) {
+  width: 100%;
+}
+ /*Mobile*/
+
+@media(max-width:767px){
+    #container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .box{
+        width: 90%;
+    }
+    .box:nth-child(3){
+        width: 90%;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+    }
+}
+/*Tablet*/
+@media(min-width:768px) and (max-width: 991px){
+    #container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+        align-items: center;
+    }
+   body{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+   }
+
+    h1{
+        display: flex;
+        justify-content: center;
+    }
+     
+}
+
+/*Desktop*/
+@media(min-width: 992px) and (max-width:1400px){
+    #container{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .box{
+        width: 400px;
+    }
+    .box:nth-child(3){
+        width: 400px;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+    }
+}
+</style>
+<body>
+    <div id="container">
+  <div class="box"><div class="titulo">Frango:</div> <p>Lorem ipsum dolor sit...</p></div>
+  <div class="box"><div class="titulo">Carne:</div> <p>Lorem ipsum dolor sit...</p></div>
+  <div class="box"><div class="titulo">Peixe:</div> <p>Lorem ipsum dolor sit...</p></div>
+</div>
+
+</body>
+</html>
